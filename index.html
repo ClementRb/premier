@@ -1,9 +1,358 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>bonjour</title>
+    <title>Bet Bankroll - Gestion de bankroll pour pari sportif</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Gérez votre bankroll pour les paris sportifs avec un outil puissant, simple et gratuit" />
+    <meta name="keywords" content="Gestion, Pari sportif, Paris sportifs, Bankroll, Capital, Bet, Paris, Football, Tennis, Basketball, Analyse, Méthode, Conseil, Outil" />
+    <meta name="Author" content="Bet-Bankroll.com"/>
+    <meta name="Content-language" content="fr"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index" />
+    <meta name="REVISIT-AFTER" content="7 days" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="propeller" content="7dac8debf6973d23179a7fab3b17b22b" />
+
+    <meta property="og:title" content="Bet Bankroll - Gestion de bankroll pour pari sportif"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://www.bet-bankroll.com/images/BetBankrollLogo.png"/>
+    <meta property="og:url" content=" http://www.bet-bankroll.com"/>
+    <meta property="og:site_name" content="bet-bankkroll.com"/>
+    <meta property="og:description" content="Gérez votre bankroll pour les paris sportifs avec un outil puissant, simple et gratuit."/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <!-- Animation CSS -->
+    <link href="./css/animate.css" rel="stylesheet">
+    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Mainly scripts -->
+    <script src="./js/jquery-2.1.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="./js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="./js/plugins/toastr/toastr.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="./js/inspinia.js"></script>
+    <script src="./js/plugins/pace/pace.min.js"></script>
+    <!--<script src="./js/plugins/wow/wow.min.js"></script>-->
+
+    <!-- jQuery UI -->
+    <script src="./js/jquery-ui-1.10.4.min.js"></script>
+
+
 </head>
-<body><h2>mon site</h2>
+<body id="page-top" class="landing-page">
+
+
+
+
+<div class="navbar-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-scroll" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./home.php"><img src="./images/BetBankrollLogo.png" alt="Bet-Bankroll"/></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="#page-top">Home</a></li>
+                    <li><a class="page-scroll" href="#gestion">Gestion</a></li>
+                                        <li><a class="page-scroll" href="#" data-toggle="modal" data-target="#modaleRegister">Inscription</a></li>
+                    <li><a class="page-scroll" href="#" data-toggle="modal" data-target="#modaleConnexion">Connexion</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="modaleRegister">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h2 class="modal-title text-center">Inscription</h2>
+			</div>
+			<div class="modal-body">
+			<form method="post" action="./content/register.php" class="form-horizontal" enctype="multipart/form-data">
+	
+				<div class="form-group">
+					<label for="pseudo" class="col-md-5 control-label">Pseudo : </label>
+					<div class="col-sm-7">
+						<input id="pseudo" name="pseudo" type="text" class="form-control" value="" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="email" class="col-md-5 control-label">Email : </label>
+					<div class="col-sm-7">
+						<input id="email" name="email" type="email" class="form-control" value="" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="emailok" class="col-md-5 control-label">Confirmation d'email : </label>
+					<div class="col-sm-7">
+						<input id="emailok" name="emailok" type="email" class="form-control" value="" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="pwd" class="col-md-5 control-label">Mot de passe : </label>
+					<div class="col-sm-7">
+						<input id="pwd" name="pwd" type="password" class="form-control" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="pwdok" class="col-md-5 control-label">Confirmation mot de passe : </label>
+					<div class="col-sm-7">
+						<input id="pwdok" name="pwdok" type="password" class="form-control" required>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				<button type="submit" class="btn btn-primary">S'inscrire</button>
+			</div>
+
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modaleConnexion">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h2 class="modal-title text-center">Connexion</h2>
+			</div>
+			<div class="modal-body">
+			<form method="post" action="./content/connexion.php" class="form-horizontal" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="email" class="col-md-4 control-label">Email : </label>
+					<div class="col-sm-8">
+						<input id="emailc" name="emailc" type="email" class="form-control" required> 
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="pwd" class="col-md-4 control-label">Mot de passe : </label>
+					<div class="col-sm-8">
+						<input id="pwdc" name="pwdc" type="password" class="form-control" required>
+					</div>
+				</div>
+				<a href="#" data-toggle="modal" data-target="#modalReset" class="navy-link pull-right" id="resetPassword">Mot de passe oublié ?</a>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				<button id="goConnexion" type="submit" class="btn btn-primary">Se connecter</button>
+			</div>
+
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalReset">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h2 class="modal-title text-center">Mot de passe oublié</h2>
+			</div>
+			<div class="modal-body">
+			<form method="post" action="./content/reset.php" class="form-horizontal" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="email" class="col-md-4 control-label">Email : </label>
+					<div class="col-md-8">
+						<input id="emailp" name="emailp" type="email" class="form-control" required> 
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				<button id="goReset" type="submit" class="btn btn-primary">Confirmer</button>
+			</div>
+
+			</form>
+
+		</div>
+	</div>
+</div></div>
+
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Gérez votre bankroll<br/>
+                        pour les paris sportifs<br/>
+                        avec un outil<br/>
+                        puissant, simple et gratuit</h1>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#" role="button" data-toggle="modal" data-target="#modaleRegister">INSCRIVEZ-VOUS</a>
+                    </p>
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <img src="./img/landing/laptop.png" alt="laptop"/>
+                </div>
+            </div>
+            <div class="header-back one"></div>
+
+        </div>
+    </div>
+</div>
+
+<section id="features" class="container services">
+    <div class="row">
+        <div class="col-sm-3">
+            <h2>Gestion</h2>
+            <p>Découvrez le meilleur outil pour gérer votre Bankroll. Suivez et analysez votre bilan en toute simplicitée</p>
+            <p><a class="navy-link" href="#" data-toggle="modal" data-target="#modaleRegister" role="button">En savoir plus &raquo;</a></p>
+        </div>
+        <div class="col-sm-3">
+            <h2>Analyses</h2>
+            <p>Profitez de nombreuses analyses sur les différents évenements sportifs afin d’améliorer vos pronostics.</p>
+            <p><a class="navy-link" href="#" data-toggle="modal" data-target="#modaleRegister" role="button">En savoir plus &raquo;</a></p>
+        </div>
+        <div class="col-sm-3">
+            <h2>Conseils</h2>
+            <p>Retrouvez des conseils pour apprendre et vous perfectionner dans les choix de vos paris sportifs.</p>
+            <p><a class="navy-link" href="#" data-toggle="modal" data-target="#modaleRegister" role="button">En savoir plus &raquo;</a></p>
+        </div>
+        <div class="col-sm-3">
+            <h2>Outils</h2>
+            <p>De nombreux outils de calculs sont disponibles pour vous faciliter la vie dans les paris sportifs.</p>
+            <p><a class="navy-link" href="#" data-toggle="modal" data-target="#modaleRegister" role="button">En savoir plus &raquo;</a></p>
+        </div>
+    </div>
+</section>
+
+<section  id="gestion" class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="navy-line"></div>
+            <h1>Gestion de Bankroll<br/> <span class="navy"> Un outil indispensable pour réussir</span> </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-center wow fadeInLeft">
+            <div>
+                <i class="fa fa-bar-chart features-icon"></i>
+                <h2>Statistiques</h2>
+                <p>Suivez avec précision l'ensemble de vos statistiques de façon détaillée avec plus de 15 critères disponibles.</p>
+            </div>
+            <div class="m-t-lg">
+                <i class="fa fa-file features-icon"></i>
+                <h2>Export</h2>
+                <p>Exportez le bilan de votre Bankroll au format CSV, pour accéder à vos paris sans connexion internet.</p>
+            </div>
+        </div>
+        <div class="col-md-6 text-center  wow zoomIn">
+            <img src="./img/landing/perspective.png" alt="dashboard" class="img-responsive center-block">
+        </div>
+        <div class="col-md-3 text-center wow fadeInRight">
+            <div>
+                <i class="fa fa-area-chart features-icon"></i>
+                <h2>Graphique</h2>
+                <p>Visualisez d'un coup d'oeil votre progression grâce à un graphique complet et simplifié.</p>
+            </div>
+            <div class="m-t-lg">
+                <i class="fa fa-share-alt features-icon"></i>
+                <h2>Partage</h2>
+                <p>Partagez facilement le bilan de votre bankroll avec tout vos amis. Montrez qui est le meilleur !</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="container-fluid">
+        <div id="footer-width" class="row">
+            <div class="hidden-xs col-sm-6 col-md-6">
+                <h4><span class="glyphicon glyphicon-star"></span> Bet Bankroll</h4>
+
+                    <p class="small">Bet Bankroll est un outil très simple qui permet de gérer votre bankroll pour les paris sportifs.</p>
+                    <p class="small">Un parieur qui veut réussir et gagner de l’argent dans les paris sportifs doit gérer son capital à la perfection comme une entreprise, c’est ce que permet de faire Bet Bankroll.</p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <h4><span class="glyphicon glyphicon-share"></span> Nous Suivre</h4>
+                    <a href="https://www.facebook.com/Bet-Bankroll-310970082440270/" target="_blank" class="icon-social"><img src="./images/social/facebook-social.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/Bet_Bankroll" target="_blank" class="icon-social"><img src="./images/social/twitter-social.png" alt="Twitter"></a>
+                    <a href="https://instagram.com/bet_bankroll" target="_blank" class="icon-social"><img src="./images/social/instagram-social.png" alt="Instagram"></a>
+                    <br/><br/>
+                <h4><span class="glyphicon glyphicon-envelope"></span> Contact</h4>
+                    <p>betbankroll@gmail.com</p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <h4><span class="glyphicon glyphicon-user"></span> Partenaires</h4>
+                <p>- <a href="http://www.pariez-gagnant.com" target="_blank" class="navy-link">Pariez gagnant</a></p>
+                <p>- <a href="http://www.betabondieu.com/pronostic-foot.php" target="_blank" class="navy-link">Pronostics Betabondieu</a></p>
+                <p>- <a href="http://www.tennisweek.fr/" target="_blank" class="navy-link">Tennisweek</a></p>
+                <p>- <a href="https://www.facebook.com/Betting-Winner-582395838585216/?fref=nf" target="_blank" class="navy-link">Betting Winner</a></p>
+                <p><a href="https://www.facebook.com/Bet-Bankroll-310970082440270/" target="_blank" class="navy-link">Devenir partenaire</a></p>
+            </div>
+
+            <div id="reserved" class="col-xs-12 text-center">
+            <p class="small">Bet-Bankroll - Tous Droits Réservés 2014-2016</p>
+            <p class="small">Bet-Bankroll est uniquement une plateforme de gestion et ne prend aucun pari.</p>
+            </div>
+        </div>
+        <!--/row-->
+    </div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56653656-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+
+        $('#resetPassword').on('click',function() {
+            $('#modaleConnexion').modal('hide')
+        });
+    });
+</script>
+
 
 </body>
 </html>
